@@ -1,1 +1,1 @@
-# quotes-microservice
+# CS361 - Quotes Microservice
