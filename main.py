@@ -78,6 +78,17 @@ def patient_write(text: str, file_address: str):
 
 
 if __name__ == '__main__':
+    print(f"Quotes Microservice\n"
+          f"=================================================================\n"
+          f"Enter commands in 'pipe.txt' to communicate with the program.\n"
+          f"(You must replace the entire file contents. Commands are "
+          f"case-sensitive.)\n"
+          f"   {'quote':20} Generate a random quote from 'quotes.txt'\n"
+          f"   {'add: NEW QUOTE':20} Add a new quote to 'quotes.txt'\n"
+          f"   {'quit':20} Quit the program\n"
+          f"=================================================================\n"
+          )
+
     service = QuoteService(PIPE_ADDR, QUOTES_ADDR)
     service.generate_quote()  # Generate initial quote
     service.run()
