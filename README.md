@@ -7,7 +7,7 @@
 ### Requesting data
 Communicate with the program by writing commands in `pipe.txt`. You must replace the entire contents of the text file. Commands are case-sensitive.
 - `add: <new quote>` — Add `<new quote>` to `quotes.txt`.
-- `quote` — Generate a random quote from `quotes.txt`.
+- `quote` — Generate a random quote from `quotes.txt`. A quote will also be generated automatically on startup.
 - `quit` — Quit the program.
 
 #### Example call (Python):
