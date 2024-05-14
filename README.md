@@ -2,7 +2,7 @@
 
 ## How to Use
 - Download the executable file from the releases tab.
-- Running the executable will create two empty text files in its directory: `pipe.txt` and `quotes.txt`.
+- Running the executable will create two text files in its directory: `pipe.txt` and `quotes.txt`. By default, `quotes.txt` will be populated with several cooking/baking quotes.
 
 ### Requesting data
 Communicate with the program by writing commands in `pipe.txt`. You must replace the entire contents of the text file. Commands are case-sensitive.
