@@ -25,7 +25,8 @@ DEFAULT_QUOTES: list[str] = [
 class QuoteService:
     def __init__(self, pipe_address: str, quotes_address):
         self._pipe_address = pipe_address
-        self._quote_manager = QuoteManager(quotes_address)
+        self._quote_manager = QuoteManager(quotes_address,
+                                           default_quotes=DEFAULT_QUOTES)
 
     def generate_quote(self):
         """

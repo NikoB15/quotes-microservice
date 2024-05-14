@@ -11,6 +11,7 @@ class QuoteManager:
         if default_quotes is None:
             default_quotes = self._load_quotes()
         self._quotes: list[str] = default_quotes
+        self.save_quotes()
 
     def _load_quotes(self) -> list[str]:
         """
