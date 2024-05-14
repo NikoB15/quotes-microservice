@@ -6,9 +6,11 @@ class QuoteManager:
     """
     A class for managing quotes in a text file.
     """
-    def __init__(self, file_address: str):
+    def __init__(self, file_address: str, default_quotes: list[str] = None):
         self._address: str = file_address
-        self._quotes: list[str] = self._load_quotes()
+        if default_quotes is None:
+            default_quotes = self._load_quotes()
+        self._quotes: list[str] = default_quotes
 
     def _load_quotes(self) -> list[str]:
         """

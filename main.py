@@ -4,6 +4,22 @@ from time import sleep
 
 PIPE_ADDR: str = 'pipe.txt'
 QUOTES_ADDR: str = 'quotes.txt'
+DEFAULT_QUOTES: list[str] = [
+    '"Eating is a necessity, but cooking is an art." – Unknown',
+    '"The only thing I like better than talking about food is eating." – John '
+    'Walters',
+    '"Food is our common ground, a universal experience." – James Beard',
+    '"Baking: The pursuit of sweet perfection." – Unknown',
+    '"When life gives you lemons, make lemon bars." – Unknown',
+    '"Food is the ultimate equalizer. It brings people together from all '
+    'walks of life." – Unknown',
+    '"Doughn’t stop believing." – Unknown',
+    '"Bread is the warmest, kindest of all words. Write it always with a '
+    'capital letter, like your own name." – Russian Proverb',
+    '"Food is the most primitive form of comfort." – Sheila Graham',
+    '"A recipe has no soul. You, as the cook, must bring soul to the recipe." '
+    '– Thomas Keller',
+]
 
 
 class QuoteService:
@@ -70,7 +86,7 @@ def patient_write(text: str, file_address: str):
     success = False
     while not success:
         try:
-            with open(file_address, 'w') as pipe:
+            with open(file_address, 'w+') as pipe:
                 pipe.write(text)
                 success = True
         except PermissionError:
