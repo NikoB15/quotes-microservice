@@ -8,7 +8,7 @@
 Communicate with the program by writing commands in `quotes_pipe.txt`. You must replace the entire contents of the text file. Commands are case-sensitive.
 - `add: <new quote>` — Adds `<new quote>` to `quotes.txt`. Replaces the text in `quotes_pipe.txt` with "SUCCESS" or "ERROR".
 - `quote` — Replaces the text in `quotes_pipe.txt` with a random quote from `quotes.txt`. A quote will also be generated on startup.
-- `quit` — Quit the program. Replaces the text in `quotes_pipe.txt` with "SUCCESS".
+- `quit` — Closes the program. Replaces the text in `quotes_pipe.txt` with "SUCCESS".
 
 #### Example call (Python):
 ```
