@@ -38,12 +38,15 @@ class QuoteService:
     def add_quote(self, quote: str):
         """
         Registers the given text as a new quote and saves it to the quotes text
-        file.
+        file. Fails if the quote to add matches an existing command or is blank.
         :param quote: The quote to add
         """
-        self._quote_manager.add_quote(quote)
-        self._quote_manager.save_quotes()
-        patient_write('SUCCESS', self._pipe_address)
+        if len(quote.strip()) == 0 or matches_command(quote):
+            patient_write('ERROR', self._pipe_address)
+        else:
+            self._quote_manager.add_quote(quote)
+            self._quote_manager.save_quotes()
+            patient_write('SUCCESS', self._pipe_address)
 
     def _listen(self):
         """
@@ -92,6 +95,13 @@ def patient_write(text: str, file_address: str):
                 success = True
         except PermissionError:
             sleep(0.1)
+
+
+def matches_command(text: str):
+    if text in ['quote', 'quit']:
+        return True
+    if text.startswith('add: '):
+        return True
 
 
 if __name__ == '__main__':
