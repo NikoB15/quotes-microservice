@@ -2,7 +2,7 @@ from quote_manager import QuoteManager
 from time import sleep
 
 
-PIPE_ADDR: str = 'pipe.txt'
+PIPE_ADDR: str = 'quotes_pipe.txt'
 QUOTES_ADDR: str = 'quotes.txt'
 DEFAULT_QUOTES: list[str] = [
     '"Eating is a necessity, but cooking is an art." – Unknown',
@@ -43,7 +43,7 @@ class QuoteService:
         """
         self._quote_manager.add_quote(quote)
         self._quote_manager.save_quotes()
-        patient_write('', self._pipe_address)
+        patient_write('SUCCESS', self._pipe_address)
 
     def _listen(self):
         """
@@ -74,7 +74,7 @@ class QuoteService:
             self._quit_program()
 
     def _quit_program(self):
-        patient_write('', self._pipe_address)
+        patient_write('SUCCESS', self._pipe_address)
         quit(0)
 
 
